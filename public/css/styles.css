@@ -1,0 +1,491 @@
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f1f3F4;
+}
+
+/* Zoom on Hover */
+.zoom {
+  transition: ease-in-out 0.2s;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.09, 1.09);
+  /* IE 9 */
+  -webkit-transform: scale(1.09, 1.09);
+  /* Safari 3-8 */
+  transform: scale(1.09, 1.09);
+}
+
+/* Zoom on Hover */
+
+
+/***Custom Scroll Bar***/
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #adadad;
+}
+
+/***Custom Scroll Bar***/
+
+
+@media screen and (max-width: 600px) {}
+
+@media (max-width:992px) and (min-width:601px) {}
+
+
+/* Top Nav */
+
+#navbar {
+  padding: 0 15px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+  z-index: 99;
+}
+
+#navbar #logo {
+  padding: 13px 0;
+}
+
+#navbar img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+#navbar #logo-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #000;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+
+#navbar .right {
+  float: right;
+}
+
+#navbar a:hover {
+  color: #BEE5F1;
+}
+
+/* Top Nav*/
+
+
+
+.sidenav {
+  margin: 80px 0px 5px;
+  padding-bottom: 15px;
+  border-radius: 15px;
+  border: 1px solid #BEE5F1;
+  height: 87%;
+  width: 280px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: .3s;
+  /* box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); */
+}
+
+@media screen and (max-width: 600px) {
+  .sidenav {
+    display: none;
+    height: 89%;
+    width: 264px;
+  }
+}
+
+@media (max-width:992px) and (min-width:601px) {
+
+  .sidenav {
+    display: none;
+  }
+
+}
+
+.sidenav-title {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 12px 25px 1px;
+  color: #adadad;
+}
+
+.sidenav a {
+  border: 1px solid #BEE5F1;
+  padding: 8px 10px 8px 24px;
+  font-weight: 400;
+  margin: 2px 8px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #051006;
+  display: block;
+  transition: ease-in-out .3s;
+}
+
+.sidenav a:hover {
+  color: #000;
+  font-weight: 600;
+  background-color: #BEE5F1;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.10), 0 1px 2px 0 rgba(0, 0, 0, 0.10);
+}
+
+.sn-icon {
+  margin-top: 3px;
+  color: #616161;
+  font-size: 15px;
+}
+
+.sidenav a:hover i.sn-icon {
+  color: #000;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+
+/* .sidenav-none {
+    display: none;
+  } */
+/* Side Navigation  */
+
+
+.main {
+  background-color: white;
+  margin: 80px 100px 10px 310px;
+  /* Same as the width of the sidenav */
+  padding: 20px 15px;
+  border-radius: 15px;
+  border: 1px solid #BEE5F1;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+@media screen and (max-width: 600px) {
+  .main {
+    margin: 50px 5px 5px;
+    /* Same as the width of the sidenav */
+  }
+}
+
+@media (max-width:992px) and (min-width:601px) {
+  .main {
+    margin: 50px 5px 5px;
+    /* Same as the width of the sidenav */
+  }
+}
+
+
+/* Home Page Card  */
+
+.home-page-card-top {
+  border-radius: 15px 15px 0 0;
+  border: 1px solid #adadad;
+  margin: 5px 5px 0 5px;
+  padding: 20px;
+}
+
+.hp-card-title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.home-page-card-bottom {
+  border-radius: 0 0 30px 30px;
+  border: 1px solid #adadad;
+  margin: 0 5px 5px 5px;
+  padding: 5px 20px;
+}
+
+/* Home Page Card  */
+
+
+/* Sign In Page  */
+
+.signin-page-container {
+  margin: 5% 15% 5%;
+  padding: 5%;
+  /* border: 1px solid #BEE5F1; */
+  border-radius: 20px;
+}
+
+
+.signin-form-card {
+  margin: auto;
+  background-color: white;
+  width: 45%;
+  border-radius: 15px;
+  border: 1px solid #BEE5F1;
+  padding: 18px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+@media screen and (max-width:600px) {
+  .signin-page-container {
+    margin: 20% 1% 5%;
+  }
+
+  .signin-form-card {
+    width: 100%;
+  }
+}
+
+
+/* Sign In Page  */
+
+
+
+/* Product Page */
+.table-icon {
+  cursor: pointer;
+}
+
+/* Add Product Modal  */
+
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 125px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.3);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #BEE5F1;
+  width: 40%;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+
+.inputs {
+  margin: 24px 16px;
+}
+
+.modal-btn-container {
+  margin: 16px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .modal-content {
+    width: 90%;
+  }
+
+}
+
+@media (max-width:992px) and (min-width:601px) {
+  .modal-content {
+    width: 60%;
+  }
+}
+
+input {
+  outline: none;
+}
+
+/* Add Product Modal  */
+/* Product Page */
+
+
+/* Users Page  */
+@media screen and (max-width: 600px) {
+  .w3-table {
+    display: block;
+    overflow-x: scroll;
+  }
+}
+
+
+.inputtip {
+  padding: 5px 0 5px 10px;
+  font-size: 12px;
+}
+
+#message {
+  padding: 5px 0 5px 10px;
+  font-size: 12px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -2px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: black;
+}
+
+.invalid:before {
+  position: relative;
+  /* left: -2px;
+  content: "✖"; */
+}
+
+
+.main-users {
+  background-color: white;
+  margin: 80px 100px 10px 310px;
+  /* Same as the width of the sidenav */
+  padding: 20px 15px;
+  border-radius: 15px;
+  border: 1px solid #BEE5F1;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+@media screen and (max-width: 600px) {
+  .main-users {
+    margin: 80px 5px 5px;
+    overflow: hidden;
+    /* Same as the width of the sidenav */
+  }
+}
+
+@media (max-width:992px) and (min-width:601px) {
+  .main-users {
+    margin: 10px 5px 5px;
+    /* Same as the width of the sidenav */
+  }
+}
+
+
+.footer {
+  background-color: white;
+  margin: 35px 100px 10px 310px;
+  /* Same as the width of the sidenav */
+  padding: 20px 15px;
+  border-radius: 15px;
+  /* border: 1px solid #BEE5F1; */
+  /* box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16), 0 1px 3px 0 rgba(0, 0, 0, 0.12); */
+}
+
+i.footer-icon {
+  display: none;
+}
+
+.footer:hover i.footer-icon {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    margin: 10px 5px 5px;
+    overflow: hidden;
+    /* Same as the width of the sidenav */
+  }
+}
+
+@media (max-width:992px) and (min-width:601px) {
+  .footer {
+    margin: 10px 5px 5px;
+    /* Same as the width of the sidenav */
+  }
+}

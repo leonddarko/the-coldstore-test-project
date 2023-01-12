@@ -1,0 +1,36 @@
+<%- include("partials/header"); -%>
+
+    <div class="signin-page-container">
+        <div class="signin-form-card">
+            <span class="w3-small">Welcome To TCS</span>
+            <h5 class="w3-margin-0"><b> Sign in To Proceed</b></h5>
+            <br>
+            <form action="/" method="post">
+
+                <span class="w3-tiny">Email Address</span>
+                <input class="w3-input w3-hover-border-black" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" name="username"
+                    placeholder="Enter email address" autocomplete="off" required>
+                <span class="w3-small w3-text-red w3-animate-opacity">
+                    <b>
+                        <%= emailError %>
+                    </b></span>
+                <br>
+
+                <span class="w3-tiny">Password</span>
+                <input class="w3-input w3-hover-border-black" type="password" id="userpsw" autocomplete="off"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter password" name="password" required>
+                <span class="w3-small w3-text-red w3-animate-opacity">
+                    <b>
+                        <%= wrongPswerror %>
+                    </b>
+                </span>
+                <br>
+                <input class="w3-check" type="checkbox" id="togglepsw">
+                <span>Show password</span>
+                <br><br>
+                <button type="submit" class="w3-button w3-card w3-block w3-black w3-round-large">Sign
+                    in</button>
+            </form>
+        </div>
+    </div>
+

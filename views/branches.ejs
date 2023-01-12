@@ -1,0 +1,149 @@
+<%- include("partials/header"); -%>
+    <%- include("partials/topnav"); -%>
+        <%- include("partials/sidenav"); -%>
+
+            <div class="main">
+                <h4><i class="fas fa-warehouse"></i> All Branches</h4>
+                <table class="w3-table">
+                    <tr>
+                        <th><b>Branch Name</b></th>
+                        <th><b>Branch Address</b></th>
+                        <th><b>Branch Phone</b></th>
+                    </tr>
+
+                    <% Branches.slice().reverse().forEach((branch)=> { %>
+                        <tr>
+                            <td>
+                                <%= branch.branchName %>
+                            </td>
+                            <td>
+                                <%= branch.branchAddress %>
+                            </td>
+                            <td>
+                                <%= branch.branchNumber %>
+                            </td>
+                            <td style="width:8%;" class="w3-center">
+                                <i title="Edit"
+                                    onclick="document.getElementById('<%= branch._id %>').style.display = 'block';"
+                                    class="table-icon fas fa-pen-alt w3-text-gray w3-hover-text-black"></i>
+                            </td>
+                            <td style="width:8%;" class="w3-center">
+                                <i title="Delete Item"
+                                    onclick="document.getElementById('<%= branch.branchName %>').style.display = 'block';"
+                                    class="table-icon fas fa-trash w3-text-gray w3-hover-text-red"></i>
+                            </td>
+                        </tr>
+
+                        <!-- Edit Branch Modal  -->
+                        <div id="<%= branch._id %>" class="modal">
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                <form action="/branches" method="post">
+                                    <div class="inputs">
+                                        <span class="w3-tiny">
+                                            <%= branch._id %>
+                                        </span>
+                                        <h4 class="w3-margin-0">Edit Branch Data</h4>
+                                        <br>
+                                        <input class="w3-input w3-hide" type="radio" name="branchID"
+                                            value="<%= branch._id %>" checked required>
+                                        <input class="w3-input" type="text" name="branchname"
+                                            placeholder="<%= branch.branchName %>" autocomplete="off" required>
+                                        <input class="w3-input" type="text" name="branchaddress"
+                                            placeholder="<%= branch.branchAddress %>" autocomplete="off" required>
+                                        <input class="w3-input" type="number" min="1" step="any"
+                                            placeholder="<%= branch.branchNumber %>" name="branchnumber"
+                                            autocomplete="off" required>
+                                    </div>
+
+                                    <div class="modal-btn-container">
+                                        <button class="w3-button w3-round w3-border w3-border-grey w3-hover-white zoom"
+                                            type="button"
+                                            onclick="document.getElementById('<%= branch._id %>').style.display = 'none';">
+                                            CANCEL
+                                        </button>
+
+                                        <button type="submit"
+                                            class="w3-button w3-round w3-black w3-hover-green w3-right zoom" name="btn"
+                                            value="editbranch">SAVE</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div><!-- Edit Product Modal  -->
+
+                        <!-- Delete Branch Modal -->
+                        <div id="<%= branch.branchName %>" class="modal">
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                <form action="/branches" method="post">
+                                    <div class="inputs">
+                                        <span class="w3-tiny">
+                                            <%= branch._id %>
+                                        </span>
+                                        <h4>You are about to delete <span class="w3-text-red">
+                                                <%= branch.branchName %>
+                                            </span> Branches?
+
+                                        </h4>
+                                        <input class="w3-input w3-hide" type="radio" name="branchID"
+                                            value="<%= branch._id %>" checked required>
+                                    </div>
+
+                                    <div class="modal-btn-container">
+                                        <button class="w3-button w3-round w3-border w3-border-grey w3-hover-white zoom"
+                                            type="button"
+                                            onclick="document.getElementById('<%= branch.branchName %>').style.display = 'none';">
+                                            <span class="w3-hide-small"> NO,</span> DON'T
+                                        </button>
+
+                                        <button onclick="this.form.submit();"
+                                            class="w3-button w3-round w3-red w3-hover-red w3-right zoom" name="btn"
+                                            value="deletebranch"><span class="w3-hide-small">YES,</span> DELETE <span
+                                                class="w3-hide-small"> Branch</span></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div><!-- Delete Branch Modal -->
+                        <% }); %>
+                </table>
+                <br>
+                <button onclick="document.getElementById('addBranchModal').style.display = 'block';"
+                    class="w3-button w3-round-xxlarge w3-block w3-border w3-border-grey w3-hover-black w3-card">
+                    <i class="fas fa-plus"></i> Add A Branch
+                </button>
+            </div>
+
+
+            <!-- Add Product Modal  -->
+            <div id="addBranchModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <form action="/Branches" method="post">
+                        <div class="inputs">
+                            <h4>Add A Branch</h4>
+                            <input class="w3-input" type="text" placeholder="Branch Name" name="branchname"
+                                autocomplete="off" required>
+
+                            <input class="w3-input" type="text" placeholder="Branch Address" name="branchaddress"
+                                autocomplete="off" required>
+
+                            <input class="w3-input" type="number" min="1" placeholder="Branch Number"
+                                name="branchnumber" autocomplete="off" required>
+                        </div>
+
+                        <div class="modal-btn-container">
+                            <button class="w3-button w3-round w3-border w3-border-grey w3-hover-white zoom"
+                                type="button"
+                                onclick="document.getElementById('addBranchModal').style.display = 'none';">
+                                <span> Cancel</span>
+                            </button>
+
+                            <button onclick="this.form.submit();" type="submit" name="btn" value="addbranch"
+                                class="w3-button w3-round w3-teal w3-hover-teal w3-right zoom"><span
+                                    class="w3-hide-small">YES,</span> ADD </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <%- include("partials/footer"); -%>

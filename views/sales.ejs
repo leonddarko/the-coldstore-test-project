@@ -1,0 +1,33 @@
+<%- include("partials/header"); -%>
+    <%- include("partials/topnav"); -%>
+        <%- include("partials/sidenav"); -%>
+
+            <div class="main">
+                <div class="w3-row">
+                    <div class="w3-col l8"><span><i class="fas fa-money-check"></i> <b>Make Sales</b></span></div>
+                    <div class="w3-col l2"><span class="w3-small">Unit Price:</span></div>
+                    <div class="w3-col l2"><span class="w3-small">Stock:</span></div>
+                </div>
+
+                <br>
+
+                <form action="/sales" method="post">
+                    <div class="w3-row">
+                        <div class="w3-col l4 m4">
+                            <select class="w3-select" name="productname" required>
+                                <option value="" class="w3-hide" disabled selected>Product</option>
+                                <option value="">List Product Name</option>
+                            </select>
+                        </div>
+                        <div class="w3-col l4 m4">
+                            <select class="w3-select" name="producttype" required>
+                                <option value="" class="w3-hide" disabled selected>Package Type</option>
+                                <option value="">List Types</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                
+            </div>
+
+<%- include("partials/footer"); -%>
